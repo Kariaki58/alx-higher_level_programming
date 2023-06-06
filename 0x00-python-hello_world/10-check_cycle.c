@@ -10,9 +10,9 @@ int check_cycle(listint_t *list)
 {
 	listint_t *tortoise = list;
 	listint_t *hare = list->next;
-	if (!list || !list->next)
+	if (!tortoise || !hare)
 		return (0);
-	while (hare != NULL && hare->next != NULL)
+	while (hare && hare->next)
 	{
 		if (hare == tortoise)
 			return (1);
