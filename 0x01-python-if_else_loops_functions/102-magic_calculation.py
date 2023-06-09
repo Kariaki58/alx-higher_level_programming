@@ -8,3 +8,4 @@ def magic_calculation(a, b, c):
     elif c > b:
         return a + b
     return a * b - c
+dis.dis(magic_calculation)
