@@ -6,7 +6,7 @@ if __name__ == "__main__":
     if len(ar) - 1 != 3:
         print("Usage: ./100-my_calculator.py <a> <operator> <b>")
         sys.exit(True)
-    elif ar[2] != "+" and ar[2] != "-" and ar[2] != "*" and ar[2] != "/" :
+    elif ar[2] != "+" and ar[2] != "-" and ar[2] != "*" and ar[2] != "/":
         print("Unknown operator. Available operators: +, -, * and /")
         sys.exit(True)
     else:
