@@ -14,4 +14,4 @@ def add_tuple(tuple_a=(), tuple_b=()):
         a, b = tuple_a
     if (len(tuple_b) >= 2):
         c, d = tuple_b
-    return tuple(a + c, b + d)
+    return ((a + c, b + d))
