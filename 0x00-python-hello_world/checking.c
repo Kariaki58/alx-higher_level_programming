@@ -2,8 +2,7 @@
 
 /**
  * main - description
- * 
- * Return: 0
+ * Return: return 0.
 */
 int main(void)
 {
