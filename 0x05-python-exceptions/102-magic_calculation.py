@@ -5,5 +5,9 @@ import dis
 def magic_calculation(a, b):
     result = 0
     for i in range(1, 3):
-        pass
+        try:
+            if i > a:
+                pass
+        except:
+            pass
 dis.dis(magic_calculation)
