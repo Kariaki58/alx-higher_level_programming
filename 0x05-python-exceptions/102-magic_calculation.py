@@ -12,7 +12,6 @@ def magic_calculation(a, b):
                 result += a ** b / i
         except:
             result = b + a
-            break
         finally:
-            pass
+            return result
 dis.dis(magic_calculation)
