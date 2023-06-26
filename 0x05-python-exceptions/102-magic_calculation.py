@@ -8,6 +8,8 @@ def magic_calculation(a, b):
         try:
             if i > a:
                 raise Exception('Too far')
+            else:
+                result = result ** a
         except:
             pass
 dis.dis(magic_calculation)
