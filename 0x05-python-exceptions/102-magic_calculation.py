@@ -13,5 +13,6 @@ def magic_calculation(a, b):
         except:
             result = b + a
             break
-        return result
+        finally:
+            return result
 dis.dis(magic_calculation)
