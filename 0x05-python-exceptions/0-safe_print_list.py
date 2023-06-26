@@ -6,7 +6,7 @@ def safe_print_list(my_list=[], x=0):
             sum += 1
             print(my_list[i], end='')
         print()
-    except:
+    except IndexError:
         sum -= 1
         print()
         pass
