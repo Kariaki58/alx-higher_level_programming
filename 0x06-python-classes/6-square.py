@@ -6,8 +6,8 @@ class Square:
     """drawing a square in the terminal"""
 
     def __init__(self, size=0, position=(0, 0)):
-        self.size = size
-        self.position = position
+        self.__size = size
+        self.__position = position
 
     @property
     def size(self):
@@ -34,6 +34,7 @@ class Square:
                     self.__position = value
         else:
             raise TypeError("position must be tuple of 2 positive integers")
+
     def area(self):
         return self.__size * self.__size
 
