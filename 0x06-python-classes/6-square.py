@@ -42,8 +42,7 @@ class Square:
             length = int(self.area() / self.__size)
             for i in range(length):
                 for k in range(self.position[0]):
-                    if self.position[1] <= 0:
-                        print("_", end="")
+                    print("_", end="")
                 for j in range(length):
                     print("#", end="")
                 print()
