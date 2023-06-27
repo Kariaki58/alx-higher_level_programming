@@ -4,6 +4,7 @@
 
 class Square:
     """drawing a square in the terminal"""
+
     def __init__(self, size=0):
         self.size = size
 
