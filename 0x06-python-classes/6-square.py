@@ -6,8 +6,16 @@ class Square:
     """drawing a square in the terminal"""
 
     def __init__(self, size=0, position=(0, 0)):
+        if type(size) is not int:
+            raise TypeError("size must be an integer")
+        if size < 0:
+            raise TypeError("size must be >= 0")
         self.__size = size
         self.__position = position
+
+    """constructor"""
+    def __str__(self):
+        self.my_print()
 
     @property
     def size(self):
