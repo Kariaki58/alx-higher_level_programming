@@ -1,13 +1,13 @@
 #!/usr/bin/python3
-"""coordinate class"""
+"""write a class Square that defines a square"""
 
 
 class Square:
+    """drawing a square in the terminal"""
+
     def __init__(self, size=0, position=(0, 0)):
-        if type(position) is not tuple:
-            raise TypeError("position must be a tuple of 2 positive integers")
-        self.__size = size
-        self.__position = position
+        self.size = size
+        self.position = position
 
     @property
     def size(self):
@@ -19,7 +19,8 @@ class Square:
             raise TypeError("size must be an integer")
         if value < 0:
             raise ValueError("size must be >= 0")
-        self.__size = value
+        else:
+            self.__size = value
 
     @property
     def position(self):
@@ -27,12 +28,7 @@ class Square:
 
     @position.setter
     def position(self, value):
-        print("here")
-        if type(value) is not tuple or len(value) != 2:
-            raise TypeError("position must be a tuple of 2 positive integers")
-        if type(value[0]) is not int or type(value[1]) is not int:
-            raise TypeError("position must be a tuple of 2 positive integers")
-        if value[0] < 0 or value[1] < 0:
+        if type(value[0]) is not int and type(value[1]) is not int:
             raise TypeError("position must be a tuple of 2 positive integers")
         self.__position = value
 
@@ -48,4 +44,4 @@ class Square:
                 print()
             for j in range(length):
                 print(" " * self.__position[0], end="")
-                print("#" * self.__size)
+                print("#" * length)
