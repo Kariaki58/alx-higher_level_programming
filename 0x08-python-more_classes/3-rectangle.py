@@ -15,6 +15,8 @@ class Rectangle:
         self.height = height
 
     def __str__(self):
+        if self.__width == 0 or self.__height == 0:
+            return ""
         dev_rect = []
         for i in range(self.__height):
             for j in range(self.__width):
@@ -22,6 +24,7 @@ class Rectangle:
             if i != self.__height - 1:
                 dev_rect.append("\n")
         return "".join(dev_rect)
+
     @property
     def width(self):
         """Get/set the width of the rectangle."""
