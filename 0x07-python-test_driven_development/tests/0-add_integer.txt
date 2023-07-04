@@ -17,4 +17,12 @@ ValueError: cannot convert float NaN to integer
 >>> add_integer(float('nan'), 2)
 Traceback (most recent call last):
 ValueError: cannot convert float NaN to integer
->>> add_integer(
+>>> add_integer(float('inf'), float('inf'))
+Traceback (most recent call last):
+OverflowError: cannot convert float infinity to integer
+>>> add_integer(5 + 1j)
+Traceback (most recent call last):
+TypeError: a must be an integer
+>>> add_integer(float('inf'))
+Traceback (most recent call last):
+OverflowError: cannot convert float infinity to integer
