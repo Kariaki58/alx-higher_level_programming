@@ -1,11 +1,13 @@
 #!/usr/bin/python3
-"""add_integer: add two integer"""
+"""
+add_integer: add two integer
+Args:
+    a(int): input integer value a
+"""
 
 
 def add_integer(a, b=98):
     """function that return the addition of a and b
-    Args:
-    a(int): integer value a
     b(int, optional): integer value b. Dfaults to 98
     """
     if type(a) is float:
