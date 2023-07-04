@@ -1,0 +1,15 @@
+"""
+This is a documentation for testing the addition of 2 numbers
+>>> add_interger(1, 2)
+3
+>>> add_interger(100, -2)
+98
+>>> add_interger(2)
+100
+>>> add_interger(100.3, -2)
+98
+>>> add_interger(4, "School")
+b must be an integer
+>>> add_interger(None)
+a must be an integer
+"""
