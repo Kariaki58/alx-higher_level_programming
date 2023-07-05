@@ -70,7 +70,7 @@ class Rectangle:
     """find and return the perimeter of Rectangle"""
     def perimeter(self):
         return 2 * (self.__height + self.__width)
-    
+
     """returns the biggest rectangle based onn the area"""
     @staticmethod
     def bigger_or_equal(rect_1, rect_2):
