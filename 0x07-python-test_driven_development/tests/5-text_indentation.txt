@@ -1,0 +1,9 @@
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+>>> text_indentation("""Hello my name is. Im 20 years""")
+Hello my name is.
+<BLANKLINE>
+Im 20 years
+>>> text_indentation(10)
+Traceback (most recent call last):
+TypeError: text must be a string
+>>> text_indentation("")
