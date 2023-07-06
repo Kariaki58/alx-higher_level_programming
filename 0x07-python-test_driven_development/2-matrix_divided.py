@@ -1,5 +1,29 @@
 #!/usr/bin/python3
+"""
+matrix_divided: function that divides a matrix by n
+Args:
+matrix(matrix): input a 2d matrix expected
+"""
+
+
 def matrix_divided(matrix, div):
+    """get a new matrix that is divided by div.
+
+    Args:
+        matrix (matix):when you put a wrong input
+        div (int, float):when you put a wrong input
+
+    Raises:
+        TypeError:when you put a wrong input
+        ZeroDivisionError:when you put a wrong input
+        TypeError:when you put a wrong input
+        TypeError:when you put a wrong input
+        TypeError:when you put a wrong input
+        TypeError:when you put a wrong input
+
+    Returns:
+        matrix: returns a new matrix
+    """
     if not isinstance(div, int) and not isinstance(div, float):
         raise TypeError("div must be a number")
     if div == 0:
