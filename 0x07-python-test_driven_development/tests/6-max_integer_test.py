@@ -18,7 +18,7 @@ class TestMaxInteger(unittest.TestCase):
         MainInput = [1, 2, 3, 4]
         self.assertEqual(max_integer(data), None)
         self.assertEqual(max_integer(MainInput), 4)
-        self.assertEqual(max_integer[7], 7)
+        self.assertEqual(max_integer([7]), 7)
     def test_random(self):
         """when the list is not arange
         """
