@@ -18,4 +18,6 @@ def add_integer(a, b=98):
         raise TypeError("a must be an integer")
     if type(b) is not int:
         raise TypeError("b must be an integer")
+    if a is None:
+        raise TypeError("add_integer() missing 1 required positional argument: 'a'")
     return (a + b)
