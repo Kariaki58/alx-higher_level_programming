@@ -19,7 +19,8 @@ def text_indentation(text):
     state = False
     while i < len(text):
 
-        if text[i - 1] == "." or text[i - 1] == "?" or text[i - 1] == ":" and i != 0:
+        if text[i - 1] == "." or text[i - 1] == "?" or \
+                text[i - 1] == ":" and i != 0:
             if text[i] == " ":
                 state = True
 
