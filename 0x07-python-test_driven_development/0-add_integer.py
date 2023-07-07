@@ -10,6 +10,7 @@ def add_integer(a, b=98):
     """function that return the addition of a and b
     b(int, optional): integer value b. Dfaults to 98
     """
+    m = "add_integer() missing 1 required positional argumnet: 'a'"
     if type(a) is float:
         a = int(a)
     if type(b) is float:
@@ -19,5 +20,5 @@ def add_integer(a, b=98):
     if type(b) is not int:
         raise TypeError("b must be an integer")
     if a is None:
-        raise TypeError("add_integer() missing 1 required positional argument: 'a'")
+        raise TypeError(m)
     return (a + b)
