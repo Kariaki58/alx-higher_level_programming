@@ -44,9 +44,3 @@ class TestMaxInteger(unittest.TestCase):
 
     def test_string(self):
         self.assertEqual(max_integer(""), None)
-
-    def max_beginning(self):
-        self.assertEqual(max_integer([4, 1, -3], 4)
-
-    def max_negative(self):
-        self.assertEqual(max_integer([-5, -2, -1], -1)
