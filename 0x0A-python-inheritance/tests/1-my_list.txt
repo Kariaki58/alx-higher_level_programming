@@ -1,0 +1,37 @@
+>>> MyList = __import__('1-my_list').MyList
+>>> data = __import__("1-my_list").__doc__
+>>> len(data) > 1
+True
+>>> my_list = MyList()
+>>> my_list.append(1)
+>>> my_list.append(2)
+>>> my_list.append(3)
+>>> print(my_list)
+[1, 2, 3]
+>>> my_list.print_sorted()
+[1, 2, 3]
+>>> value = MyList()
+>>> print(value)
+[]
+>>> value.print_sorted()
+[]
+>>> var = MyList()
+>>> var.append(-1)
+>>> var.append(0)
+>>> var.append(-2)
+>>> var.append(20)
+>>> var.append(-12)
+>>> print(var)
+[-1, 0, -2, 20, -12]
+>>> var.print_sorted()
+[-12, -2, -1, 0, 20]
+>>> check_null = MyList()
+>>> check_null.append(Code)
+Traceback (most recent call last):
+NameError: name 'Code' is not defined
+>>> objx = MyList()
+>>> objx.append(None)
+>>> print(objx)
+[None]
+>>> objx.print_sorted()
+[None]
