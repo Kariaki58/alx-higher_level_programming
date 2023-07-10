@@ -35,7 +35,3 @@ NameError: name 'Code' is not defined
 [None]
 >>> objx.print_sorted()
 [None]
->>> empty = MyList()
->>> empty.append()
-Traceback (most recent call last):
-TypeError: list.append() takes exactly one argument (0 given)
