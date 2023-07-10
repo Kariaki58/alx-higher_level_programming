@@ -2,6 +2,8 @@
 
 """lookup function returns a list of directorys
 """
+
+
 def lookup(obj):
     """function that returns a list of directorys
 
