@@ -10,6 +10,5 @@ if __name__ == "__main__":
         Python_list = json_list("add_item.json")
     except FileNotFoundError:
         Python_list = []
-    for i in sys.argv[1:]:
-        Python_list.append(i)
+    Python_list.extend(sys.argv[1:])
     Python_list_data(Python_list, "add_item.json")
