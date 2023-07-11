@@ -16,7 +16,7 @@ class Student:
     def to_json(self, attrs=None):
         if type(attrs) is list:
             for data in attrs:
-                if type(data) is not str:
+                if not isinstance(data, str):
                     continue
                 data = {d: getattr(self, d) for d in attrs if hasattr(self, d)}
                 return data
