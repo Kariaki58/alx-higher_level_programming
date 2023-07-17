@@ -8,6 +8,7 @@ class Base:
     """
 
     __nb_objects = 0
+
     def __init__(self, id=None):
         """the instance of this class
 
@@ -56,7 +57,6 @@ class Base:
         with open(file_name, mode="w", encoding="UTF8") as file:
             json.dump(storage_temp, file)
 
-
     @classmethod
     def create(cls, **dictionary):
         """create a new instance with a constant type
@@ -68,13 +68,11 @@ class Base:
 
         if (cls.__name__ == "Rectangle"):
             dummy_inst = Rectangle(2, 3)
-        
         if (cls.__name__ == "Square"):
             dummy_inst = Square(4)
-        
         dummy_inst.update(**dictionary)
         return dummy_inst
-    
+
     @classmethod
     def load_from_file(cls):
         """load a json data from a file
@@ -92,5 +90,5 @@ class Base:
                 inst = cls.create(**data)
                 list_content.append(inst)
             return list_content
-        except:
+        except Exception:
             return list_content
