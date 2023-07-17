@@ -93,7 +93,7 @@ class Base:
             return list_content
         except Exception:
             return list_content
-    
+
     @classmethod
     def save_to_file_csv(cls, list_objs):
         """save to csv file"""
