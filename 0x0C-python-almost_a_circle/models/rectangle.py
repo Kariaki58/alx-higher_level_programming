@@ -1,8 +1,8 @@
 #!/usr/bin/python3
-"""Rectangle class having many functionality"""
 from models.base import Base
 
 
+"""Rectangle class having many functionality"""
 class Rectangle(Base):
     def __init__(self, width, height, x=0, y=0, id=None):
         """instance method for the class Rectangle

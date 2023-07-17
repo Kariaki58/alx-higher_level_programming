@@ -1,26 +1,20 @@
 #!/usr/bin/python3
-"""Square class
-
-    Raises:
-        ValueError: when you input wrongly
-
-    Returns:
-        any: returns any type
-"""
 from models.rectangle import Rectangle
 
 
+"""Square class"""
 class Square(Rectangle):
-    """create the instance attribute
-
-    Args:
-        Rectangle (): inherites the recangle class with super()
-    """
     def __init__(self, size, x=0, y=0, id=None):
+        """create the instance attribute
+
+        Args:
+            Rectangle (): inherites the recangle class with super()
+        """
         super().__init__(size, size, x, y, id)
     
-    """returns the instance in string formate"""
     def __str__(self):
+        """returns the instance in string formate"""
+
         m = "[Square] ({}) {}/{} - {}"
         return m.format(self.id, self.x, self.y, self.width)
 
