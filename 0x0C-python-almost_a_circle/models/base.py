@@ -8,9 +8,12 @@ import json
 
 class Base:
     __nb_objects = 0
-    """the instance method
-    """
     def __init__(self, id=None):
+        """the instance of this class
+
+        Args:
+            id (int, optional): set the id to id. Defaults to None.
+        """
         if id is not None:
             self.id = id
         else:

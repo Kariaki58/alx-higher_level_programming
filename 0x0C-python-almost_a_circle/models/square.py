@@ -34,20 +34,19 @@ class Square(Rectangle):
         self.width = x
         self.height = x
     
-    """
-    updates the function when called 
-    accepts multiple arguments and also dictionaries
-    """
     def update(self, *args, **kwargs):
+        """update the class
+        Args:
+            @args: variable argument
+            @kwargs: dictionary args
+        """
         length = len(args)
-
         try:
             if (length > 0):
                 raise ValueError
             for key, val in kwargs.items():
                 self.__setattr__(key, val)
             return
-        
         except ValueError:
             if (length == 1):
                 self.id = args[0]
@@ -58,6 +57,6 @@ class Square(Rectangle):
             elif (length == 4):
                 self.id, self.size, self.x, self.y = args
     
-    """convert instance to dictionary"""
     def to_dictionary(self):
+        """convert instance to dictionary"""
         return {"id": self.id, "x": self.x, "size": self.size, "y": self.y}
