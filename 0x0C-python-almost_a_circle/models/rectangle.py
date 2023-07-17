@@ -4,6 +4,8 @@ from models.base import Base
 
 
 class Rectangle(Base):
+    """inherites the Base class"""
+
     def __init__(self, width, height, x=0, y=0, id=None):
         """instance method for the class Rectangle
 
@@ -32,6 +34,7 @@ class Rectangle(Base):
     
     @width.setter
     def width(self, width):
+        """width setter"""
         if type(width) != int:
             raise TypeError("width must be an integer")
         
@@ -46,6 +49,7 @@ class Rectangle(Base):
     
     @height.setter
     def height(self, height):
+        """hight setter"""
         if type(height) != int:
             raise TypeError("height must be an integer")
         
@@ -60,6 +64,7 @@ class Rectangle(Base):
     
     @x.setter
     def x(self, x):
+        """x setter"""
         if type(x) != int:
             raise TypeError("x must be an integer")
         
@@ -74,6 +79,15 @@ class Rectangle(Base):
     
     @y.setter
     def y(self, y):
+        """set y value
+
+        Args:
+            y (int)
+
+        Raises:
+            TypeError
+            ValueError
+        """
         if type(y) != int:
             raise TypeError("y must be an integer")
         
