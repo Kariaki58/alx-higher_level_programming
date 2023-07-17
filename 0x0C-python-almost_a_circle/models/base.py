@@ -1,9 +1,15 @@
 #!/usr/bin/python3
+"""the Base class a.k.a the parent
+Returns:
+    parent: the base class with object initialied to zero
+"""
 import json
 
 
 class Base:
     __nb_objects = 0
+    """the instance method
+    """
     def __init__(self, id=None):
         if id is not None:
             self.id = id
@@ -13,11 +19,15 @@ class Base:
 
     @staticmethod
     def to_json_string(list_dictionaries):
+        """
+        convert string to json
+        """
         return "[]" if list_dictionaries is None or \
             len(list_dictionaries) <= 0 else json.dumps(list_dictionaries)
 
     @staticmethod
     def from_json_string(json_string):
+        """converts from json to string"""
         list_datas = []
 
         if json_string is None:
@@ -27,6 +37,11 @@ class Base:
 
     @classmethod
     def save_to_file(cls, list_objs):
+        """save list objs to a file
+
+        Args:
+            list_objs (object): dump the data to file
+        """
         file_name = "{}.json".format(cls.__name__)
         storage_temp = []
 
@@ -42,6 +57,11 @@ class Base:
 
     @classmethod
     def create(cls, **dictionary):
+        """create a new instance with a constant type
+
+        Returns:
+            inst: dummy instance
+        """
         from models.rectangle import Rectangle
         from models.square import Square
 
@@ -56,6 +76,11 @@ class Base:
     
     @classmethod
     def load_from_file(cls):
+        """load a json data from a file
+
+        Returns:
+            list: list content
+        """
         filename = "{}.json".format(cls.__name__)
         list_content = []
 

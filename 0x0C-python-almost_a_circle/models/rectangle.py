@@ -1,7 +1,13 @@
 #!/usr/bin/python3
+"""Rectangle class having many functionality"""
 from models.base import Base
 
+
 class Rectangle(Base):
+    """init method creates the instance of the class
+    Args:
+        Base (): inherites from Base class
+    """
     def __init__(self, width, height, x=0, y=0, id=None):
         super().__init__(id)
         self.width = width
@@ -9,12 +15,16 @@ class Rectangle(Base):
         self.x = x
         self.y = y
     
+    """
+    returns string representation of the class Rectangle
+    """
     def __str__(self):
         m = "[Rectangle] ({}) {}/{} - {}/{}"
         return m.format(self.id, self.x, self.y, self.width, self.height)
     
     @property
     def width(self):
+        """returns the width"""
         return self.__width
     
     @width.setter
@@ -27,6 +37,7 @@ class Rectangle(Base):
         self.__width = width
     @property
     def height(self):
+        """returns the height"""
         return self.__height
     
     @height.setter
@@ -40,6 +51,7 @@ class Rectangle(Base):
 
     @property
     def x(self):
+        """return x"""
         return self.__x
     
     @x.setter
@@ -53,6 +65,7 @@ class Rectangle(Base):
     
     @property
     def y(self):
+        """return y"""
         return self.__y
     
     @y.setter
@@ -63,10 +76,17 @@ class Rectangle(Base):
         if y < 0:
             raise ValueError("y must be >= 0")
         self.__y = y
-
+    
+    """
+    returns the area of the rectangle
+    """
     def area(self):
+
         return self.__height * self.__width
     
+    """
+    prints the rectangle with the symbol #
+    """
     def display(self):
         rectangle = []
 
@@ -77,6 +97,9 @@ class Rectangle(Base):
             rectangle.append('\n')
         print("".join(rectangle), end="")
     
+    """
+    update the rectangle with args and kwargs
+    """
     def update(self, *args, **kwargs):
         length = len(args)
 
@@ -98,7 +121,8 @@ class Rectangle(Base):
                 self.id, self.width, self.height, self.x = args
             elif (length == 5):
                 self.id, self.width, self.height, self.x, self.y = args
-    
+
+    """convert rectangle instance to dictionary"""    
     def to_dictionary(self):
         return {"x": self.x, "y": self.y, "id": self.id, \
                 "height": self.height, "width": self.width}
