@@ -1,8 +1,15 @@
 #!/usr/bin/python3
+"""Square class
+
+    Raises:
+        ValueError: when you input wrongly
+
+    Returns:
+        any: returns any type
+"""
 from models.rectangle import Rectangle
 
 
-"""Square class"""
 class Square(Rectangle):
     def __init__(self, size, x=0, y=0, id=None):
         """create the instance attribute

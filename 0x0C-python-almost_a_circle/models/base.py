@@ -1,8 +1,8 @@
 #!/usr/bin/python3
+"""the Base class a.k.a the parent"""
 import json
 
 
-"""the Base class a.k.a the parent"""
 class Base:
     __nb_objects = 0
     def __init__(self, id=None):
