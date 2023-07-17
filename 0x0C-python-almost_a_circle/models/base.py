@@ -8,7 +8,6 @@ class Base:
     """
 
     __nb_objects = 0
-    
     def __init__(self, id=None):
         """the instance of this class
 
@@ -36,7 +35,6 @@ class Base:
 
         if json_string is None:
             return list_datas
-        
         return json.loads(json_string)
 
     @classmethod
@@ -62,7 +60,6 @@ class Base:
     @classmethod
     def create(cls, **dictionary):
         """create a new instance with a constant type
-
         Returns:
             inst: dummy instance
         """
