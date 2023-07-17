@@ -12,7 +12,7 @@ from models.rectangle import Rectangle
 
 class Square(Rectangle):
     """inheriting from Rectangle"""
-    
+
     def __init__(self, size, x=0, y=0, id=None):
         """create the instance attribute
 
@@ -20,7 +20,7 @@ class Square(Rectangle):
             Rectangle (): inherites the recangle class with super()
         """
         super().__init__(size, size, x, y, id)
-    
+
     def __str__(self):
         """returns the instance in string formate"""
 
@@ -36,7 +36,7 @@ class Square(Rectangle):
     def size(self, x):
         self.width = x
         self.height = x
-    
+
     def update(self, *args, **kwargs):
         """update the class
         Args:
@@ -59,7 +59,7 @@ class Square(Rectangle):
                 self.id, self.size, self.x = args
             elif (length == 4):
                 self.id, self.size, self.x, self.y = args
-    
+
     def to_dictionary(self):
         """convert instance to dictionary"""
         return {"id": self.id, "x": self.x, "size": self.size, "y": self.y}
