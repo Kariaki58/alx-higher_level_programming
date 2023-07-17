@@ -9,6 +9,10 @@ class Rectangle(Base):
         self.x = x
         self.y = y
     
+    def __str__(self):
+        m = "[Rectangle] ({}) {}/{} - {}/{}"
+        return m.format(self.id, self.x, self.y, self.width, self.height)
+    
     @property
     def width(self):
         return self.__width
@@ -19,7 +23,7 @@ class Rectangle(Base):
             raise TypeError("width must be an integer")
         
         if width <= 0:
-            raise ValueError("width must be >= 0")
+            raise ValueError("width must be > 0")
         self.__width = width
     @property
     def height(self):
@@ -31,7 +35,7 @@ class Rectangle(Base):
             raise TypeError("height must be an integer")
         
         if height <= 0:
-            raise ValueError("height must be >= 0")
+            raise ValueError("height must be > 0")
         self.__height = height
 
     @property
@@ -44,7 +48,7 @@ class Rectangle(Base):
             raise TypeError("x must be an integer")
         
         if x < 0:
-            raise ValueError("x must be > 0")
+            raise ValueError("x must be >= 0")
         self.__x = x
     
     @property
@@ -57,5 +61,17 @@ class Rectangle(Base):
             raise TypeError("y must be an integer")
         
         if y < 0:
-            raise ValueError("y must be > 0")
+            raise ValueError("y must be >= 0")
         self.__y = y
+
+    def area(self):
+        return self.__height * self.__width
+    
+    def display(self):
+        rectangle = []
+
+        print("\n" * self.__y)
+        for _ in range(self.__height):
+            rectangle.append("#" * self.__width)
+            rectangle.append('\n')
+        print("".join(rectangle))
