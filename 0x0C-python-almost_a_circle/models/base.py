@@ -119,18 +119,7 @@ class Base:
                         str(dictionary["id"]), str(dictionary["size"]),
                         str(dictionary["x"]), str(dictionary["y"]))
                     csv_status.writerow(str_text)
-    
 
-    # try:
-    #         with open(filename, mode='r', encoding="UTF8") as file:
-    #             json_status = cls.from_json_string(file.read())
-    #         for data in json_status:
-    #             inst = cls.create(**data)
-    #             list_content.append(inst)
-    #         return list_content
-    #     except Exception:
-    #         return list_content
-    
     @classmethod
     def load_from_file_csv(cls):
         """returns a list"""
@@ -139,6 +128,6 @@ class Base:
         try:
             with open(filename, mode="r", newline="", encoding="UTF8") as file:
                 if cls.__name__ == "Rectangle":
-                    
+                    pass
         except Exception:
             return []
