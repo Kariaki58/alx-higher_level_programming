@@ -76,3 +76,30 @@ class Rectangle(Base):
             rectangle.append("#" * self.__width)
             rectangle.append('\n')
         print("".join(rectangle), end="")
+    
+    def update(self, *args, **kwargs):
+        length = len(args)
+
+        try:
+            if (length > 0):
+                raise ValueError
+            for key, val in kwargs.items():
+                self.__setattr__(key, val)
+            return
+
+        except ValueError:
+            if (length == 1):
+                self.id = args[0]
+            elif (length == 2):
+                self.id, self.width = args
+            elif (length == 3):
+                self.id, self.width, self.height = args
+            elif (length == 4):
+                self.id, self.width, self.height, self.x = args
+            elif (length == 5):
+                self.id, self.width, self.height, self.x, self.y = args
+    
+    def to_dictionary(self):
+        return {"x": self.x, "y": self.y, "id": self.id, \
+                "height": self.height, "width": self.width}
+    
