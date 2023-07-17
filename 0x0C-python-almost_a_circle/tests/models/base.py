@@ -56,29 +56,15 @@ class Base:
     
     @classmethod
     def load_from_file(cls):
-        from models.rectangle import Rectangle
-        from models.square import Square
-
         filename = "{}.json".format(cls.__name__)
         list_content = []
 
-        if cls.__name__ == "Rectangle":
-            r1 = Rectangle(2, 3)
-            try:
-                with open(filename, mode="r", encoding="UTF8") as load:
-                    for content in load:
-                        data = cls.from_json_string(content)
-                        to_dict = data.to_dictionary()
-                        r1.create(to_dict)
-            except:
-                return list_content
-        
-        elif cls.__name__ == "Square":
-            r2 = Square(5)
-
-            try:
-                with open(filename, mode="r", encoding="UTF8") as load:
-                    for content in load:
-                        data = cls.from_json_string(content)
-                        to_dict = data.to_dictionary()
-                        r2.create(to_dict)
+        try:
+            with open(filename, mode='r', encoding="UTF8") as file:
+                json_status = cls.from_json_string(file.read())
+            for data in json_status:
+                inst = cls.create(**data)
+                list_content.append(inst)
+            return list_content
+        except:
+            return list_content
