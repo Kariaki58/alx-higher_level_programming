@@ -48,11 +48,5 @@ class TestBaseClass(unittest.TestCase):
         self.assertTrue(Base(float('inf')).id, float('inf'))
 
 
-class TestRectangle(unittest.TestCase):
-    pass
-
-
 if __name__ == "__main__":
-    suites = unittest.TestLoader()
-    suites_test = suites.loadTestsFromTestCase(TestBaseClass)
-    unittest.TextTestRunner().run(suites_test)
+    unittest.main()
