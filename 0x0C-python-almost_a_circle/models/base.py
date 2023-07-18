@@ -94,40 +94,4 @@ class Base:
         except Exception:
             return list_content
 
-    @classmethod
-    def save_to_file_csv(cls, list_objs):
-        """save to csv file"""
-        filename = "{}.csv".format(cls.__name__)
-
-        with open(filename, mode="w", newline="", encoding="UTF8") as file:
-            csv_status = csv.writer(file, delimiter=" ")
-
-            if (cls.__name__ == "Rectangle"):
-                for data in list_objs:
-                    dictionary = data.to_dictionary()
-                    str_text = "{}, {}, {}, {}, {}".format(
-                        str(dictionary["id"]), str(dictionary["width"]),
-                        str(dictionary["height"]), str(dictionary["x"]),
-                        str(dictionary["y"]))
-                    csv_status.writerow(str_text)
-
-            if cls.__name__ == "Square":
-                for data in list_objs:
-                    dictionary = data.to_dictionary()
-                    str_text = ""
-                    str_text += "{}, {}, {}, {}".format(
-                        str(dictionary["id"]), str(dictionary["size"]),
-                        str(dictionary["x"]), str(dictionary["y"]))
-                    csv_status.writerow(str_text)
-
-    @classmethod
-    def load_from_file_csv(cls):
-        """returns a list"""
-        filename = "{}.csv".format(cls.__name__)
-
-        try:
-            with open(filename, mode="r", newline="", encoding="UTF8") as file:
-                if cls.__name__ == "Rectangle":
-                    pass
-        except Exception:
-            return []
+    

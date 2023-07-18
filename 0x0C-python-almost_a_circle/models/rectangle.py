@@ -103,9 +103,7 @@ class Rectangle(Base):
 
         print("\n" * (self.__y), end="")
         for _ in range(self.__height):
-            rectangle.append(" " * self.__x)
-            rectangle.append("#" * self.__width)
-            rectangle.append('\n')
+            rectangle.extend([" " * self.__x, "#" * self.__width, '\n'])
         print("".join(rectangle), end="")
 
     def update(self, *args, **kwargs):
