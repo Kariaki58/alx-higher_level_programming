@@ -110,7 +110,7 @@ class Base:
             writer = csv.DictWriter(file, fieldnames=fields)
             for data in list_objs:
                 writer.writerow(data.to_dictionary())
-    
+
     @classmethod
     def load_from_file_csv(cls):
         """
