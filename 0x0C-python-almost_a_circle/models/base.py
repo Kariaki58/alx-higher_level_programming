@@ -130,6 +130,5 @@ class Base:
                         data[key] = int(val)
                     store.append(cls.create(**data))
             return store
-        
         except Exception:
             return store
