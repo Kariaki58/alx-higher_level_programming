@@ -93,5 +93,3 @@ class Base:
             return list_content
         except Exception:
             return list_content
-
-    
