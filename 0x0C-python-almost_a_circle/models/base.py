@@ -93,3 +93,43 @@ class Base:
             return list_content
         except Exception:
             return list_content
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """save to csv file
+
+        Args:
+            list_objs (inst):
+        """
+        filename = "{}.csv".format(cls.__name__)
+        with open(filename, mode="w", newline="") as file:
+            if cls.__name__ == "Rectangle":
+                fields = ["id", "width", "height", "x", "y"]
+            else:
+                fields = ["id", "size", "x", "y"]
+            writer = csv.DictWriter(file, fieldnames=fields)
+            for data in list_objs:
+                writer.writerow(data.to_dictionary())
+    
+    @classmethod
+    def load_from_file_csv(cls):
+        """
+        load from file to csv
+        """
+        filename = "{}.csv".format(cls.__name__)
+        store = []
+        try:
+            with open(filename, mode="r", newline="") as file:
+                if cls.__name__ == "Rectangle":
+                    fields = ["id", "width", "height", "x", "y"]
+                else:
+                    fields = ["id", "size", "x", "y"]
+                reader = csv.DictReader(file, fieldnames=fields)
+                for data in reader:
+                    for key, val in data.items():
+                        data[key] = int(val)
+                    store.append(cls.create(**data))
+            return store
+        
+        except Exception:
+            return store
