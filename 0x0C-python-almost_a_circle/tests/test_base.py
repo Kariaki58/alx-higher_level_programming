@@ -47,6 +47,10 @@ class TestBaseClass(unittest.TestCase):
     def test_base_float_inf(self):
         self.assertTrue(Base(float('inf')).id, float('inf'))
 
+    def test_json_string(self):
+        t1 = Base(None)
+        t2 = Base(None)
+        self.assertTrue(t1.id == (t2.id - 1))
 
 if __name__ == "__main__":
     unittest.main()
