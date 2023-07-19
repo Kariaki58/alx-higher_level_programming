@@ -2,6 +2,7 @@
 """the Base class a.k.a the parent"""
 import json
 import csv
+import turtle
 
 
 class Base:
@@ -132,3 +133,45 @@ class Base:
             return store
         except Exception:
             return store
+    
+    @staticmethod
+    def draw(list_rectangles, list_squares):
+        """draw rectangle and square in the screen
+
+        Args:
+            list_rectangles (object):
+            list_squares (object):
+        """
+        screen = turtle.Screen()
+        screen.bgcolor('#212623')
+        rect_move = turtle.Turtle()
+
+        rect_move.color('green')
+        rect_move.pen(pensize=4)
+        
+        for objects in list_rectangles:        
+            rect_move.penup()
+            rect_move.goto(objects.x, objects.y)
+            rect_move.pendown()
+            rect_move.forward(objects.width)
+            rect_move.right(90)
+            rect_move.forward(objects.height)
+            rect_move.right(90)
+            rect_move.forward(objects.width)
+            rect_move.right(90)
+            rect_move.forward(objects.height)
+            rect_move.hideturtle()
+        
+        for objects in list_squares:
+            rect_move.penup()
+            rect_move.goto(objects.x, objects.y)
+            rect_move.pendown()
+            rect_move.forward(objects.size)
+            rect_move.right(90)
+            rect_move.forward(objects.size)
+            rect_move.right(90)
+            rect_move.forward(objects.size)
+            rect_move.right(90)
+            rect_move.forward(objects.size)
+        print(rect_move.position())
+        turtle.exitonclick()
