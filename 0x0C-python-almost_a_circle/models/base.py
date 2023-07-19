@@ -145,10 +145,8 @@ class Base:
         screen = turtle.Screen()
         screen.bgcolor('#212623')
         rect_move = turtle.Turtle()
-
         rect_move.color('green')
         rect_move.pen(pensize=4)
-        
         for objects in list_rectangles:        
             rect_move.penup()
             rect_move.goto(objects.x, objects.y)
@@ -161,7 +159,6 @@ class Base:
             rect_move.right(90)
             rect_move.forward(objects.height)
             rect_move.hideturtle()
-        
         for objects in list_squares:
             rect_move.penup()
             rect_move.goto(objects.x, objects.y)
