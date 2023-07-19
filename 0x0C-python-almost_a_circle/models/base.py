@@ -111,7 +111,7 @@ class Base:
             writer = csv.DictWriter(file, fieldnames=fields)
             for data in list_objs:
                 writer.writerow(data.to_dictionary())
-    
+
     @classmethod
     def load_from_file_csv(cls):
         """
@@ -133,7 +133,7 @@ class Base:
             return store
         except Exception:
             return store
-    
+
     @staticmethod
     def draw(list_rectangles, list_squares):
         """draw rectangle and square in the screen
@@ -147,7 +147,7 @@ class Base:
         rect_move = turtle.Turtle()
         rect_move.color('green')
         rect_move.pen(pensize=4)
-        for objects in list_rectangles:        
+        for objects in list_rectangles:
             rect_move.penup()
             rect_move.goto(objects.x, objects.y)
             rect_move.pendown()
