@@ -1,6 +1,7 @@
 #!/usr/bin/node
 
-array = process.argv;
+const array = process.argv;
+
 if (array.length === 2 || isNaN(array[2])) {
   console.log('Missing size');
 }
