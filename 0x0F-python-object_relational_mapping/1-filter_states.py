@@ -9,7 +9,7 @@ if __name__ == "__main__":
             user=argv[1], passwd=argv[2], database=argv[3]
             )
     cursor = db.cursor()
-    cursor.execute("SELECT * FROM states WHERE name LIKE 'N%'")
+    cursor.execute("SELECT * FROM states WHERE name LIKE 'N%' ORDER BY ASC")
     status = cursor.fetchall()
     for data in status:
         print(data)
