@@ -20,7 +20,7 @@ if __name__ == "__main__":
     i = 0
     for data in status:
         for col in data:
-            print(col, end = '')
+            print(col, end='')
         if i < length - 1:
             print(end=', ')
         i = i + 1
