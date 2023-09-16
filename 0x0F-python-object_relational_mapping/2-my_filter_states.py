@@ -10,7 +10,7 @@ if __name__ == "__main__":
             )
     cursor = db.cursor()
     search = argv[4]
-    qery = "SELECT * FROM states WHERE name='{}' ORDER BY id ASC"
+    qery = "SELECT * FROM states WHERE name LIKE BINARY '{}' ORDER BY id ASC"
     cursor.execute(qery.format(search))
     status = cursor.fetchall()
     for data in status:
