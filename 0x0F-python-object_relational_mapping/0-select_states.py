@@ -3,14 +3,16 @@ import MySQLdb
 from sys import argv
 
 
+"""
+get all states from a database.
+"""
 if __name__ == "__main__":
-    con = MySQLdb.connect(
-        host="localhost", port=3306, user="root",
-        password="root", database="hbtn_0e_0_usa")
-    cursor = con.cursor()
+    db = MySQLdb.connect(host="localhost", port=3306, user=argv[1],
+            passwd=argv[2], database=argv[3])
+    cursor = db.cursor()
     cursor.execute("SELECT * FROM states ORDER BY id ASC")
-    db = cursor.fetchall()
-    for i in db:
-        print(i)
+    getAllData = cursor.fetchall()
+    for data in getAllData:
+        print(data)
     cursor.close()
     db.close()
