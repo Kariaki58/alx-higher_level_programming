@@ -19,4 +19,4 @@ if __name__ == "__main__":
     for data in SqlStatement:
         print(f"{data.id}: {data.name}")
         for session in data.cities:
-            print(f"    {session.id}: {session.name}")
+            print(f"   {session.id}: {session.name}")
