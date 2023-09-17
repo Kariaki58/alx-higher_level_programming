@@ -6,6 +6,8 @@ from sqlalchemy import Column, Integer, CHAR, String
 from sqlalchemy.ext.declarative import declarative_base
 
 Base = declarative_base()
+
+
 class State(Base):
     """
     creates a table and columns
