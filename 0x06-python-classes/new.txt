@@ -1,1 +1,0 @@
-I have having issues with git on my two terminal
