@@ -18,10 +18,33 @@ $ sudo npm install semistandard --global
  - [https://intranet.alxswe.com/rltoken/35q5Pc6A6KWPyd3kGeRQFg](Documentation)
 
 ### How to Run the Scripts
+
+make your script executable to  be about to run it
+```
+chmod u+x filename
+```
+
 ```
 guillaume@ubuntu:~/0x12$ ./0-javascript_is_amazing.js 
 JavaScript is amazing
 guillaume@ubuntu:~/0x12$ 
 guillaume@ubuntu:~/0x12$ semistandard ./0-javascript_is_amazing.js 
+guillaume@ubuntu:~/0x12$
+
+guillaume@ubuntu:~/0x12$ cat 13-main.js
+#!/usr/bin/node
+const add = require('./13-add').add;
+console.log(add(3, 5));
+guillaume@ubuntu:~/0x12$ ./13-main.js
+8
+guillaume@ubuntu:~/0x12$ 
+
+guillaume@ubuntu:~/0x12$ cat 100-main.js
+#!/usr/bin/node
+myVar = 89;
+require('./100-let_me_const')
+console.log(myVar);
+guillaume@ubuntu:~/0x12$ ./100-main.js
+333
 guillaume@ubuntu:~/0x12$ 
 ```
