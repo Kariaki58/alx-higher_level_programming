@@ -5,6 +5,6 @@ if (process.argv.length < 4) {
 } else {
   const sortArray = process.argv.slice(2, process.argv.length);
   const array = sortArray.sort((a, b) => b - a);
-  const remove_dup = Array.from(new Set(array));
-  console.log(remove_dup[1]);
+  const removeDup = Array.from(new Set(array));
+  console.log(removeDup[1]);
 }
