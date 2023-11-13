@@ -1,3 +1,1 @@
-All Python Task and project go in here
-Let's Write some beatiful python Codes
-Python is fun
+### ALX Higher Level Programming, with Python and JavaScript
