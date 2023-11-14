@@ -1,17 +1,16 @@
 #!/usr/bin/node
 
 exports.esrever = function (list) {
-    let start = 0;
-    let end = list.length - 1;
+  let start = 0;
+  let end = list.length - 1;
 
-    while (start < end) {
+  while (start < end) {
+    const temp = list[start];
+    list[start] = list[end];
+    list[end] = temp;
 
-        let temp = list[start];
-        list[start] = list[end];
-        list[end] = temp;
-
-        start += 1;
-        end -= 1;
-    }
-    return list
-}
+    start += 1;
+    end -= 1;
+  }
+  return list;
+};
