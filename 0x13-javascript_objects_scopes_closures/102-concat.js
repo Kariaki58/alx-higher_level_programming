@@ -9,12 +9,12 @@ fileStorage.readFile(argv[2], 'utf8', function (err, data) {
   }
   fileStorage.readFile(argv[3], 'utf8', function (err, data2) {
     if (err) {
-        throw err;
+      throw err;
     }
     fileStorage.writeFile(argv[4], data + data2, err => {
-        if (err) {
-            throw err;
-        }
+      if (err) {
+        throw err;
+      }
     });
   });
 });
