@@ -8,8 +8,7 @@ for (const key in dict) {
 	if (dict[key] in Object.keys(empty_dict)) {
 		empty_dict[dict[key]].push(key)
 	} else {
-		empty_dict[dict[key]] = [];
-		empty_dict[dict[key]].push(key)
+		empty_dict[dict[key]] = [key];
 	}
 }
 
