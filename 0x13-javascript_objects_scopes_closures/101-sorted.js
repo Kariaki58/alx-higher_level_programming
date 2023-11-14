@@ -5,7 +5,7 @@ let empty_dict = {}
 
 
 for (const key in dict) {
-	if (dict[key] in Object.keys(empty_dict)) {
+	if (empty_dict[dict[key]] !== undefined) {
 		empty_dict[dict[key]].push(key)
 	} else {
 		empty_dict[dict[key]] = [key];
