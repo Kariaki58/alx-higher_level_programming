@@ -12,7 +12,7 @@ class Rectangle {
     let string = '';
     for (let i = 0; i < this.height; i++) {
       for (let j = 0; j < this.width; j++) {
-        string += "X";
+        string += 'X';
       }
       if (i < this.height - 1) {
         string += '\n';
@@ -31,12 +31,18 @@ class Rectangle {
     this.width *= 2;
     this.height *= 2;
   }
+}
 
+class Square extends Rectangle {
+  constructor (size) {
+    super(size, size);
+  }
+  
   charPrint (c) {
     let string = '';
 
     if (c === undefined) {
-      c = "X";
+      c = 'X';
     }
     for (let i = 0; i < this.height; i++) {
       for (let j = 0; j < this.width; j++) {
@@ -47,12 +53,6 @@ class Rectangle {
       }
     }
     console.log(string);
-  }
-}
-
-class Square extends Rectangle {
-  constructor (size) {
-    super(size, size);
   }
 }
 
