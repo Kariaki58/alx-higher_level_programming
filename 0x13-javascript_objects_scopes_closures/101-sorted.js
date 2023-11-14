@@ -1,14 +1,14 @@
 #!/usr/bin/node
 
 const dict = require('./101-data').dict;
-const empty_dict = {};
+const emptyDict = {};
 
 for (const key in dict) {
-  if (empty_dict[dict[key]] !== undefined) {
-    empty_dict[dict[key]].push(key);
+  if (emptyDict[dict[key]] !== undefined) {
+    emptyDict[dict[key]].push(key);
   } else {
-    empty_dict[dict[key]] = [key];
+    emptyDict[dict[key]] = [key];
   }
 }
 
-console.log(empty_dict);
+console.log(emptyDict);
