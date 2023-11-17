@@ -20,3 +20,5 @@ if __name__ == "__main__":
     if (num):
         data = session.query(State).first()
         print(f"{data.id}: {data.name}")
+    else:
+        print("Nothing")
