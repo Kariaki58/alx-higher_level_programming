@@ -11,12 +11,8 @@ if __name__ == "__main__":
 
     cur = connect.cursor()
 
-    cur.execute("""
-        SELECT * FROM states
-                WHERE name='{}'
-                ORDER BY states.id ASC
-        """.format(argv[4]))
+    cmd = "SELECT * FROM states WHERE name='{}' ORDER BY states.id ASC"
+    cur.execute(cmd.format(argv[4]))
     rows = cur.fetchall()
     for row in rows:
         print(row)
-    
