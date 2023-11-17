@@ -15,11 +15,9 @@ if __name__ == "__main__":
                 SELECT id FROM states WHERE name=%s)
                 """, (argv[4],))
     rows = cur.fetchall()
-    last = None
-    for i in range(len(rows) - 1):
-        last = rows[i + 1][0]
-        for data in rows[i]:
-            print(data, end=', ')
-    print(last)
+    tup = ()
+    for row in rows:
+        tup = tup + row
+    print(*tup, sep=", ")
     cur.close()
     connect.close()
