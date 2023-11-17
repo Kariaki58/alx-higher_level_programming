@@ -6,6 +6,8 @@ from sys import argv
 
 
 Base = declarative_base()
+
+
 class State(Base):
     """state class
 
@@ -24,7 +26,9 @@ class State(Base):
 
 
 if __name__ == "__main__":
-    engine = create_engine("mysql://{argv[1]}:{argv[2]}@localhost:3306/{argv[3]}", echo=False)
+    engine = create_engine(
+        "mysql://{argv[1]}:{argv[2]}@localhost:3306/{argv[3]}", echo=False
+        )
     Base.metadata.create_all(bind=engine)
     Session = sessionmaker(engine)
     session = Session()
