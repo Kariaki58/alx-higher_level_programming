@@ -13,9 +13,9 @@ if __name__ == "__main__":
 
     cur.execute("""
         SELECT * FROM states
-                WHERE name=%s
+                WHERE name='{}'
                 ORDER BY states.id ASC
-        """, (argv[4],))
+        """.format(argv[4]))
     rows = cur.fetchall()
     for row in rows:
         print(row)
