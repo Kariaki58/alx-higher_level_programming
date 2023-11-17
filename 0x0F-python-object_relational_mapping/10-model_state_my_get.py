@@ -9,7 +9,7 @@ from sqlalchemy.orm import sessionmaker
 if __name__ == "__main__":
     """entry point"""
     engine = create_engine(
-        'mysql://{}:{}@localhost/{}'.format(sys.argv[1],
+        'mysql://{}:{}@localhost:3306/{}'.format(sys.argv[1],
                                             sys.argv[2],
                                             sys.argv[3]),
         echo=False)
@@ -20,6 +20,6 @@ if __name__ == "__main__":
     query = session.query(State).filter(State.name==data).all()
     if query:
         for data in query:
-            print(f"{data.id}: {data.name}")
+            print(data.id)
     else:
         print("Not found")
