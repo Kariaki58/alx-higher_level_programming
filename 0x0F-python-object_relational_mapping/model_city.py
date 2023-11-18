@@ -10,4 +10,4 @@ class City(Base):
     id = Column(autoincrement=True, unique=True, nullable=False, primary_key=True)
     name = Column(String(128), nullable=False)
     state_id = Column(Integer, ForeignKey("states.id"), nullable=False)
-    state = relationship("State", order_by="City.id", foreign_keys="City.state_id")
+    state = relationship("State", foreign_keys="City.state_id")
