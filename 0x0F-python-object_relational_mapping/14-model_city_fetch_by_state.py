@@ -17,10 +17,7 @@ if __name__ == "__main__":
     Base.metadata.create_all(bind=engine)
     Session = sessionmaker(engine)
     session = Session()
-
-    query = session.query(State, City).join(
-        State, State.id == City.state_id
-        ).all()
+    query = session.query(State, City).join(State, State.id == City.state_id).all()
     for data1, data2 in query:
         print(f"{data1.name}: ({data2.id}) {data2.name}")
     session.commit()
