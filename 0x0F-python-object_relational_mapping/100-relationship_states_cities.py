@@ -15,7 +15,7 @@ if __name__ == "__main__":
                                                  sys.argv[3]),
         echo=False)
     Base.metadata.create_all(bind=engine)
-    Session = sessionmaker(engine)
+    Session = sessionmaker(bind=engine)
     session = Session()
 
     state = State(name="California")
