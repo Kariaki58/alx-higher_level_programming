@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""model city fetch state"""
 import sys
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
