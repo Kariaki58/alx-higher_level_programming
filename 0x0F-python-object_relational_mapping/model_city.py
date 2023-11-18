@@ -11,14 +11,3 @@ class City(Base):
     name = Column(String(128), nullable=False)
     state_id = Column(Integer, ForeignKey("states.id"), nullable=False)
     state = relationship("State", order_by="City.id", foreign_keys="City.state_id")
-
-
-if __name__ == "__main__":
-    engine = create_engine(
-        "mysql://{argv[1]}:{argv[2]}@localhost:3306/{argv[3]}", echo=False
-        )
-    Base.metadata.create_all(bind=engine)
-    Session = sessionmaker(engine)
-    session = Session()
-    session.commit()
-    session.close()
