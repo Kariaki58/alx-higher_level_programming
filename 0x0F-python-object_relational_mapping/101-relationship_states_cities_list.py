@@ -20,8 +20,8 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
     query = session.query(State).all()
-    for states in query:
-        print(f"{states.id}: {states.name}")
-        for city in states.cities:
+    for state in query:
+        print(f"{state.id}: {state.name}")
+        for city in state.cities:
             print(f"    {city.id}: {city.name}")
     session.close()
