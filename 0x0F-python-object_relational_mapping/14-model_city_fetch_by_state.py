@@ -2,7 +2,7 @@
 """model city fetch state"""
 import sys
 from sqlalchemy import create_engine
-from sqlalchemy.orm import sessionmaker
+from sqlalchemy.orm import Session
 from model_state import Base, State
 from model_city import City
 
@@ -14,8 +14,7 @@ if __name__ == "__main__":
                                                  sys.argv[2],
                                                  sys.argv[3]),
         echo=False)
-    Session = sessionmaker(engine)
-    session = Session()
+    session = Session(engine)
     query = session.query(State, City).join(
         State, State.id == City.state_id
         ).order_by(City.id).all()
