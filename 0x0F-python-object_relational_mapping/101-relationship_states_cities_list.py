@@ -16,14 +16,12 @@ if __name__ == "__main__":
                                                  sys.argv[2],
                                                  sys.argv[3]),
         echo=False)
-    Base.metadata.create_all(bind=engine)
-    Session = sessionmaker(engine)
+    Base.metadata.create_all(engine)
+    Session = sessionmaker(bind=engine)
     session = Session()
-    query = session.query(State).outerjoin(City).order_by(
-        State.id, City.id).all()
+    query = session.query(State).all()
     for states in query:
         print(f"{states.id}: {states.name}")
         for city in states.cities:
             print(f"    {city.id}: {city.name}")
-    session.commit()
     session.close()
