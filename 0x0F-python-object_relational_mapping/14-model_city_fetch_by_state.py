@@ -14,11 +14,10 @@ if __name__ == "__main__":
                                                  sys.argv[2],
                                                  sys.argv[3]),
         echo=False)
-    Base.metadata.create_all(bind=engine)
-    Session = sessionmaker(engine)
+    Session = sessionmaker(bind=engine)
     session = Session()
 
-    query = session.query(State, City).join(
+    query = session.query(City, State).join(
         State, State.id == City.state_id
         ).all()
     for data1, data2 in query:
