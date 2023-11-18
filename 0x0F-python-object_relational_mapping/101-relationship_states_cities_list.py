@@ -18,16 +18,14 @@ if __name__ == "__main__":
     Session = sessionmaker(engine)
     session = Session()
 
-    query_data = session.query(State).all()
-    query_next = session.query(State, City).join(City, State.id == City.state_id).all()
+    query_data = session.query(State).outerjoin(City).order_by(
+        State.id, City.id
+        ).all()
 
+    for data in query_data:
+        print(f"{data.id}: {data.name}")
+        for data in data.cities:
+            print(f"    {data.id}: {data.name}")
     
-    for d1 in query_data:
-        print(f"{d1.id}: {d1.name}")
-        for _, data in query_next:
-            if d1.id == data.state_id:
-                print(f"    {data.id}: {data.name}")
-
-
     session.commit()
     session.close() 
