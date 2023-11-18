@@ -14,7 +14,7 @@ if __name__ == "__main__":
                                                  sys.argv[2],
                                                  sys.argv[3]),
         echo=False)
-    Session = sessionmaker(bind=engine)
+    Session = sessionmaker(engine)
     session = Session()
 
     query = session.query(City, State).join(
