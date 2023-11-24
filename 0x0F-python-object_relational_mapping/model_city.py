@@ -6,6 +6,7 @@ from sqlalchemy.orm import relationship, sessionmaker
 
 
 class City(Base):
+    """City class"""
     __tablename__ = "cities"
     id = Column(
             Integer,
