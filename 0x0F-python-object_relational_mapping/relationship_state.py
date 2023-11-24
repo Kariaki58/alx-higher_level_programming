@@ -23,4 +23,8 @@ class State(Base):
         unique=True
         )
     name = Column(String(128), nullable=False)
-    cities = relationship('City', back_populates='state', cascade='all, delete-orphan')
+    cities = relationship(
+            'City',
+            back_populates='state',
+            cascade='all, delete-orphan'
+            )
