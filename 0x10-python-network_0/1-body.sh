@@ -1,3 +1,3 @@
 #!/bin/bash
 # curl to the end
-curl -sL "$1"
+curl -s -o /dev/null -w "%{http_code}" "$1" | grep -q 200 && curl -s "$1"
