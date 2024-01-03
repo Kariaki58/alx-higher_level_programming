@@ -4,7 +4,7 @@ const request = require('request');
 const url = process.argv[2];
 
 request(url, function (err, response, body) {
-  if (response.statusCode == 200) {
+  if (response.statusCode === 200) {
     const Body = JSON.parse(body);
     const results = Body.results;
     let count = 0;
@@ -16,5 +16,7 @@ request(url, function (err, response, body) {
       }
     }
     console.log(count);
+  } else {
+    console.log(err);
   }
 });
