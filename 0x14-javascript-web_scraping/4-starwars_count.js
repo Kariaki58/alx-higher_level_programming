@@ -13,8 +13,7 @@ request(url, function (err, response, body) {
       let count = 0;
       for (let i = 0; i < results.length; i++) {
         for (let j = 0; j < results[i]['characters'].length; j++) {
-          let check18 = results[i]['characters'][j].endsWith('18/');
-          if (check18) {
+          if (results[i]['characters'][j] == character_url) {
             count++;
           }
         }
