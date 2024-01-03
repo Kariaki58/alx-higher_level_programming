@@ -10,9 +10,14 @@ request(url, (err, respose) => {
     if (respose.statusCode == 200) {
         const body = JSON.parse(respose.body);
         const loopback = body.results;
-        const wedgeMovies = loopback.filter(film => 
-            film.characters.includes(character_url)
-        );
-        console.log(wedgeMovies.length);
+        let count = 0;
+        for (let i = 0; i < loopback.length; i++) {
+            for (let j = 0; j < loopback[i].characters.length; j++) {
+                if (loopback[i].characters[j] === character_url) {
+                    count += 1
+                }
+            }
+        }
+        console.log(count)
     }
 });
