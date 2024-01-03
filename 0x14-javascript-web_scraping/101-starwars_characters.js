@@ -4,16 +4,16 @@ const request = require('request');
 const id = process.argv[2];
 const api = `https://swapi-api.alx-tools.com/api/films/${id}`;
 
-function getCharacterName(characterUrl) {
+function getCharacterName (characterUrl) {
   return new Promise((resolve, reject) => {
     request(characterUrl, (err, response) => {
       if (err) {
-        reject(err);
+        reject(new Error(err));
       } else if (response.statusCode === 200) {
         const name = JSON.parse(response.body).name;
         resolve(name);
       } else {
-        reject(`Failed to fetch character details for ${characterUrl}`);
+        reject(new Error(`Failed to fetch character details for ${characterUrl}`)); // Use an Error object here
       }
     });
   });
@@ -24,7 +24,7 @@ request(api, (err, response) => {
     console.log(err);
   } else if (response.statusCode === 200) {
     const filmData = JSON.parse(response.body);
-    
+
     const characterPromises = filmData.characters.map(getCharacterName);
 
     Promise.all(characterPromises)
