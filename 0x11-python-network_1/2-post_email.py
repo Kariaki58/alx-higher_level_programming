@@ -12,4 +12,4 @@ if __name__ == "__main__":
     data = urlencode(data).encode('utf-8')
     P_request = Request(sys.argv[1], data=data, method='POST')
     with urlopen(P_request) as response:
-        print(f"Your email is: {response.read().decode('utf-8')}")
+        print(f"Email: {response.read().decode('utf-8')}")
