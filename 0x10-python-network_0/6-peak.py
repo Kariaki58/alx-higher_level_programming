@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """find peak"""
 
+
 def find_peak(list_of_integers):
     """using binary search to find the peak position"""
     if not list_of_integers:
