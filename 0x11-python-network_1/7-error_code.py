@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""Error code #1"""
 import requests
 import sys
 
