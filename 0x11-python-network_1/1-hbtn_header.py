@@ -6,6 +6,8 @@ from urllib.request import urlopen
 import sys
 
 
-with urlopen(sys.argv[1]) as response:
-    headers = response.headers
-    print(headers.get('X-Request-Id'))
+if __name__ == "__main__":
+    with urlopen(sys.argv[1]) as response:
+        """with with statment"""
+        headers = response.headers
+        print(headers.get('X-Request-Id'))
