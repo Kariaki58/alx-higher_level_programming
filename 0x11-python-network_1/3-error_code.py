@@ -7,7 +7,7 @@ import sys
 
 
 if __name__ == "__main__":
-    url = sys.argv[2]
+    url = sys.argv[1]
     try:
         with urlopen(url) as response:
             print(response.read().decode('utf-8'))
