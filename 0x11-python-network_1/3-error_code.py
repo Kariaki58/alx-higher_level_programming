@@ -6,7 +6,7 @@ from urllib.parse import urlencode
 import sys
 
 
-if __name__ == "__main__"
+if __name__ == "__main__":
     url = sys.argv[2]
     try:
         with urlopen(url) as response:
